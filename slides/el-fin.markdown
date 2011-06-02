@@ -1,4 +1,5 @@
 # El Fin
 
 * Check out [Retrollect](http://retrollectapp.com/), built by [Border Stylo](http://borderstylo.com/)
+* Presentation built with [Shine](http://shining.heroku.com/) and [Futura](http://typekit.com/fonts/futura-pt)
 * Reach me on Twitter as [@jxson](http://twitter.com/jxson)

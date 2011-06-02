@@ -1,6 +1,6 @@
 # Don't: Assume you "know" anything
 
-We had problems with usually known things like:
+We had problems with things we thought we knew:
 
 <ul>
   <li class="step">
