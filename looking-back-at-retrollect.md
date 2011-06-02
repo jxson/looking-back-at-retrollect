@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-This is a list of the dos and don'ts of building a cross platform HTML5 application as learned during the development of the Iphone and Android application [Retrollect][later].
+This is a list of the dos and don'ts of building a cross platform HTML5 application as learned during the development of the Iphone and Android application [Retrollect](http://retrollectapp.com/).
 
 Topics that will be touched on:
 
