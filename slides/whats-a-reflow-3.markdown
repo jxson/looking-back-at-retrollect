@@ -1,0 +1,3 @@
+`clientHeight`, `clientLeft`, `clientTop`, `clientWidth`, `focus()`, `getBoundingClientRect()`, `getClientRects()`, `innerText`, `offsetHeight`, `offsetLeft`, `offsetParent`, `offsetTop`, `offsetWidth`, `outerText`, `scrollByLines()`, `scrollByPages()`, `scrollHeight`, `scrollIntoView()`, `scrollIntoViewIfNeeded()`, `scrollLeft`, `scrollTop`, `scrollWidth`
+
+* [Reflow info quoted from Stoyan Stefanov on phpied.com:](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
