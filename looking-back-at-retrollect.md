@@ -18,42 +18,36 @@ Topics that will be touched on:
 
 > Retrollect is the free mobile app that lets you assemble the highlights of your experiences and create a visual mash-up of your life!
 
-Retrollect allows you to create slide shows containing 8 pieces of content from your phone, Twitter account, Facebook status updates, Instagram, or your phone's camera in a visually interesting way. Retrollect uses the aesthetics of vintage View-Masters to add a sense of nostalgia to your collections of content.
+Retrollect allows you to create slide shows containing 8 pieces of content from your phone, Twitter account, Facebook status updates, Instagram, or your phone's camera in a visually interesting way. Retrollect uses the aesthetics of the vintage View-Master to add a sense of nostalgia to your collections of content.
 
 Retrollect does this using a codebase mostly comprised of JavaScript, HTML, and CSS.
 
 ## Why HTML?
 
-So you are going to develop a mobile application and are weighing your options, there is **Objective-c** combined with the cocoa APIs for iOS, **Java** and Android's API system, there are **JavaScript** to native code compilers like Titanium Appcelerator, and then there is the option to build straight **HTML, JavaScript, and CSS** using normal web app practices or an embedded web view. We've all heard a lot about the shortcomings of HTML5 as a replacement for native code. There's the tired argument about [HTML5 vs Native Apps][html5-vs-native-apps] and how HTML5 not good enough yet. I tend to agree and it frustrates me that my web apps aren't as fast or responsive as native code would be _yet_. But looking at a lot of the experiments and [absolutely amazing things people are pushing with it](#examples-of-the-good-stuff), I get really inspired. I think what is really needed is an objective look at what could be done with it, what has been done, and what needs to happen to help push the spec and it's implementations across vendors forward.
+So you are going to develop a mobile application and are weighing your options, there is **Objective-c** combined with the cocoa APIs for iOS, **Java** and Android's API system, there are **JavaScript** to native code compilers like Titanium Appcelerator, and then there is the option to build straight **HTML, JavaScript, and CSS** using normal web app practices or an embedded web view.
+
+We've all heard a lot about the shortcomings of HTML5 as a replacement for native code. There's the tired argument about [HTML5 vs Native Apps][html5-vs-native-apps] and how HTML5 not good enough yet. I tend to agree and it frustrates me that my web apps aren't as fast or responsive as native code would be, but things are moving forward faster than ever. Looking at a lot of the experiments and [absolutely amazing things people are pushing with it](#examples-of-the-good-stuff), I get really inspired. I think what is really needed is an objective look at what could be done with it, what has been done, and what needs to happen to help push the spec and it's implementations across vendors forward.
+
+The question is how do we do this without absolutely loosing our minds?
 
 ### HTML5 is a great choice if:
 
 * You are fairly proficient with HTML, CSS, and JavaScript.
-* You truly believe in the "build once, deploy everywhere" dream (One build to rule them all)
-* Your app's spec doesn't call for anything device specific
 * You want to be able to deploy bug fixes etc without going through an app store
-* The new HTML5 spec is damn sexy to you (Web Workers, placeholders, Geoloaction, and all that...)
+* The stuff in the HTML5 spec like Web Workers, placeholders, Geoloaction, and all that is super sexy to you.
 
 ### HTML5 is a not so great if:
 
-* You **NEED** native look and feel in your app
+* You absolutely **NEED** precise native look and feel in your app
 * You have extremely complex UI
-
-## A note about Android
-
-It is no secret how much I genuinely dislike computers, and Android is quite nearly a hyperbolic representation of what feeds my techno rage. The Android experience to me is so bad, that in making an app for the platform the designer in me wants to throw up his arms and say "fuck this, anyone who uses this piece doesn't care about anything good so why should I jump through hoops to put my app in front of them".
-
-What platform a person uses doesn't define them, and choosing not to support a given platform based on gut reaction maybe shortchanging yourself and depriving potential users from the only good experience they might have on an android phone if you don't. Awesome people use android and you shouldn't count them out.
-
-## So we are doing this, right?
-
-Yeah man, **HTML5 all the way**. Retrollect was built using PhoneGap, HTML5, a bunch of JavaScript, and some custom JavaScript to Objective-c/ Java plugins for PhoneGap.
 
 # Do: Make fluid layouts
 
-"But the iphone's screen size is a set size!", you say? Just make it fluid man. The point of using HTML5 in the mobile context to to not be tied to any platform beyond a browser. Browsers (even embedded web-views) can be different sizes, think iPhone, iPad, most Android handsets have different screen dimensions.
+"But the iphone's screen size is a set size!", you say?
 
-Making your design fluid (the cool kids call it _responsive_ these days) will save you a ton of headaches when putting your app on more than one device.
+Just make it fluid man, the point of using HTML5 in the mobile context is to not be tied to any platform beyond a browser. Browsers (even embedded web-views) can be different sizes, think iPhone, iPad, most Android handsets have different screen dimensions.
+
+Making your design fluid (grow to fit any width and height) will save you a ton of headaches when putting your app on more than one device.
 
 # Don't: Use `img` tags, actually don't use anything that renders images either
 
@@ -96,11 +90,11 @@ Bad:
 
 Fewer elements means less work for the browser, and less confusion for your development team (this topic could be a whole separate presentation on managing complexity in CSS and Markup.)
 
-This is really important when using css transforms and expecting reasonably responsive animations.
+Using a minimal amount of markup is really important when using css transforms and expecting reasonably responsive animations.
 
 # Don't use `position: fixed;`
 
-It's not as broken on Mobile Safari but should still be avoided, it really blows up on android. Caused weird errors with text fields on Android. <sup>[Fixed positioning in Mobile Safari][2]<sup>
+It's not as broken on Mobile Safari but should still be avoided, it really blows up on android. Caused weird errors with text fields on Android. [Fixed positioning in Mobile Safari &raquo;][2]
 
 # Do: Avoid reflows
 

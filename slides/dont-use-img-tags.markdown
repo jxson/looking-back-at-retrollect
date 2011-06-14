@@ -12,4 +12,5 @@ Or at least limit their usage
   <span class="step"><code>, `text-shadow`</code></span>
   <span class="step"><code>, `box-shadow`</code></span>
   <span class="step"><code>, `opacity`</code></span>
+  <span class="step">...</span>
 </p>
