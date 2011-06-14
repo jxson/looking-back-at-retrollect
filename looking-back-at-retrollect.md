@@ -239,8 +239,6 @@ That's it, check out [Retrollect](http://retrollectapp.com/) which was built by 
 * http://www.chromeexperiments.com/
 * http://pistolslut.com/
 
-[later]: http://later.com "No time..."
-[later-image]: http://1.bp.blogspot.com/_R2MTjgtcbf4/TEPGVl-ZjfI/AAAAAAAAB7I/JNrYjDRtxkU/s400/Sabertooth%2BZombie%2BRainfest.jpg "No time to get images"
 [html5-vs-native-apps]: http://techcrunch.com/2011/02/09/html5-versus-native-apps/ "HTML5 Is An Oncoming Train, But Native App Development Is An Oncoming Rocket Ship"
 [1]: http://mir.aculo.us/2010/06/04/making-an-ipad-html5-app-making-it-really-fast/
 [2]: http://doctyper.com/archives/200808/fixed-positioning-on-mobile-safari/
