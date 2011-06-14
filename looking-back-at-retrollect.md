@@ -218,7 +218,6 @@ With docs:
 That's it, check out [Retrollect](http://retrollectapp.com/) which was built by [Border Stylo](http://borderstylo.com/).
 
 * This presentation was put together with [Shine](http://shining.heroku.com/) and [Futura](http://typekit.com/fonts/futura-pt)
-
 * Reach me on Twitter as [@jxson](http://twitter.com/jxson)
 
 ## Further Reading
