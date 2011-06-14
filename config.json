@@ -4,8 +4,8 @@
     "iphone"
   ],
   "transitions": "fade",
-  "title": "Looking Back At Retrollect",
   "theme": "black",
+  "title": "Looking Back At Retrollect",
   "slides": [
     "intro.markdown",
     "retro-what.markdown",
@@ -28,6 +28,7 @@
     "whats-a-reflow-2.markdown",
     "whats-a-reflow-3.markdown",
     "dont-force-native-behavior.markdown",
+    "do-use-touch-events.markdown",
     "do-write-tests.markdown",
     "good-test.markdown",
     "bad-test.markdown",
