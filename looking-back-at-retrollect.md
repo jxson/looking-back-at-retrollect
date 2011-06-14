@@ -122,7 +122,7 @@ clientHeight, clientLeft, clientTop, clientWidth, focus(), getBoundingClientRect
 
 # Don't: Try to make html behave like native code
 
-Im looking at you pinned header and footer with a scrolling list view in between. While we were able to implement an acceptable solution to this common native UI pattern it still doesn't feel right, we got most of the way in a short amount of time but spending time on the rest proved to be nearly counterproductive.
+Im looking at you pinned header and footer with a scrolling list view in between. While we were able to implement an acceptable solution to this common native UI pattern it still doesn't feel right, we got most of the way in a short amount of time but spending time on the rest felt counterproductive.
 
 The Retrollect team spent a lot of time trying to force this behavior into our HTML5 app with a bunch of hacks which ended up being a hit to performance or backed us into other problems like circumventing Maobile Safari's rendering optimizations.
 
@@ -134,7 +134,7 @@ Things that are difficult to translate to into pure HTML5 implementations:
 
 # Do: Write tests
 
-This is crucial and can actually speed up your development even though it will feel slow at first. It is also important to write tests that are more than testing internal javascript APIs between objects. You should be doing BDD here, you want to make sure when a user clicks a thing that something happens - write a test for that.
+This is crucial and can actually speed up your development even though it will feel slow at first. It is also important to write tests that are more than testing internal javascript APIs between objects. You should be doing BDD here, when you want to make sure when a user taps a thing that something happens you should write a test for that behavior.
 
 good test:
 
@@ -165,78 +165,61 @@ bad test:
     });
 
 
-# Don't: Assume you know anything or that anything actually works
+# Don't: Assume you know anything
 
-You got to play it like you are new to the game. What is going on in these mobile browsers if far different than anything I have ever experienced. For example:
+You should play it like you are new to the game. What is going on in these mobile browsers if far different than anything I have ever experienced. For example:
 
 * the autofocus attribute on iputs started crashing mobile safari for apparently no reason. It took about 2 hours to find out removing the autofucs attribute from our login form fixed the problem. Why? Who knows...
 * When initially launching our app setInnerHTML would not work, it says it did but no html was getting set. We had to keep calling `setInnerHTML` in a timer that checked that the html was actually added. [See "Problems with Safari and innerHTML"][7]
 
-Examine the problems and explore its solution like a scientist. Make guesses, apply them, did it work? nope do it again..
-
-# Do: Write lots of docs about all the work arounds you will end up using
-
-I am a huge fan of docco, take a look at these guys:
-
-without docs:
-
-    WebSlideView.prototype._appendCss = function (callback) {
-      utils.requireType(callback, 'function');
-
-      var sheetsToLoad = [
-        '/stylesheets/slide.css',
-        '/stylesheets/slide_edit.css',
-        '/stylesheets/slide_create.css',
-        '/stylesheets/web-slide.css',
-        '/stylesheets/ie-slide.css',
-        '/assets/' + defaults.version + '/themes/stylesheets/slide-themes.css'
-      ];
-
-      var sheetsLoaded = 0;
-
-      var wrappedCallback = function (data) {
-        $('head').append(
-          '<style type="text/css" class="webSlideCss">' + data + '</style>'
-        );
-
-        sheetsLoaded++;
-
-        if (sheetsLoaded === sheetsToLoad.length) { callback(); }
-      };
-
-      $(sheetsToLoad).each(function (i, sheetName) {
-        $.get(sheetName, wrappedCallback);
-      });
-    };
-
-with docs: http://www.cl.ly/280Q0y3P2t2R0b0t1h0m
+Examine the problems and explore its solution like a scientist. Make guesses, apply them, did it work? Nope? Do it again. Applying knowledge from the desktop world led us down many rabbit holes.
 
 # Do: Debug as much as possible in a desktop webkit browser (Google Chrome, or Safari)
 
-* debugging in a mobile browser is painstakingly slow and not accurate (no exceptions etc.).
+Debugging in a mobile browser is painstakingly slow and not accurate, no exceptions etc.
 
+# Don't: assume XHRs to behave the same on mobile as they do on the desktop
 
-# Android Specifics
-
-The following is more Android specific - this is different than html5 feature detection. Android has these features, they are just busted.
-
-Depending on the complexity of your app, peppered if statements might become necessary:
-
-    if (navigator.userAgent.indexOf('Android') != -1) {
-      // ...
-    }
-
-# Don't: Use 3D Transforms on Android
-
-3D Transforms are hardware accelerated on iOS and have the bugs worked out for the most part, it is ideal the use them on iOS devices. But they don't work very well on Android, you should use normal transforms instead.
+Also don't expect them to behave the same cross platform, things like timeouts and connection interruptions will look different then you are used to.
 
 # Do: Pay attention to heap size on Android
 
 We had a haunting issue with base64 encoding images and it turned out to be limits on the heap size, [take a look at this message board convo][8].
 
-# Don't: assume XHRs to behave the same on mobile as it does on the handsets
+# Don't: Use 3D Transforms on Android
+
+3D Transforms are hardware accelerated on iOS and have the bugs worked out for the most part, it is ideal the use them on iOS devices. But they don't work very well on Android, you should use normal transforms instead.
+
+***
+
+# Do: Write lots of docs about all the work arounds you will end up using
+
+I am a huge fan of docco, take a look at these guys:
+
+Without docs:
+
+    if (navigator.userAgent.indexOf('Android') != -1) {
+      // ...
+    }
+
+With docs:
+
+    // Before doing transforms detect which environment we are in,
+    // Android's 3D Transforms are a bit buggy so use a 2D Transform
+    // instead.
+    // [See this StackOverflow issue for details](http://bit.ly/kwsl09)
+    if (navigator.userAgent.indexOf('Android') != -1) {
+      // ...
+    }
+
 
 # El Fin
+
+That's it, check out [Retrollect](http://retrollectapp.com/) which was built by [Border Stylo](http://borderstylo.com/).
+
+* This presentation was put together with [Shine](http://shining.heroku.com/) and [Futura](http://typekit.com/fonts/futura-pt)
+
+* Reach me on Twitter as [@jxson](http://twitter.com/jxson)
 
 ## Further Reading
 

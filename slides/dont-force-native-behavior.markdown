@@ -2,6 +2,9 @@
 
 At least, don't expect it to behave exactly the same
 
-* Scrolling with a pinned header and footer
-* Swipe to Delete
-* Responsive accelerometer based UI
+<ul>
+  <li class="step">Scrolling with a pinned header and footer</li>
+  <li class="step">Swipe to Delete</li>
+  <li class="step">Responsive accelerometer based UI</li>
+  <li class="step">...</li>
+</ul>
