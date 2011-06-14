@@ -14,6 +14,8 @@ Topics that will be touched on:
 * Animations and touch move events
 * Writing custom JavaScript API interfaces for getting data into and out of native device APIs
 
+Slides: http://looking-back-at-retrollect.heroku.com/
+
 ### About Retrollect
 
 > Retrollect is the free mobile app that lets you assemble the highlights of your experiences and create a visual mash-up of your life!
